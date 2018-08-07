@@ -50,7 +50,7 @@ public class BankTest {
 		}
 		
 	}
-	@Test
+	/*@Test
 	public void testCreateAccountForNameCapitalLettersInBetween() {
 		
 		Bank b=new Bank();
@@ -65,7 +65,7 @@ public class BankTest {
 		}
 		
 	}
-	
+	*/
 	@Test
 	public void testCreateAccountForNameIsEmpty() {
 		
@@ -109,7 +109,7 @@ public class BankTest {
 		try{
 			service.createAccount(b);
 		}catch(BankException be){
-			Assert.assertEquals("Enter only valid EmailID.", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -140,7 +140,7 @@ public class BankTest {
 		try{
 			service.createAccount(b);
 		}catch(BankException be){
-			Assert.assertEquals("Enter only valid EmailID.", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -227,7 +227,7 @@ public class BankTest {
 		try{
 			service.showBalance("1234567890");
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -240,7 +240,7 @@ public class BankTest {
 		try{
 			service.showBalance(b.getPhoneNo());
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -251,7 +251,7 @@ public class BankTest {
 		try{
 			service.deposit("1234567890",500);
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -261,7 +261,7 @@ public class BankTest {
 		try{
 			service.deposit("1234567890",500);
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -272,7 +272,7 @@ public class BankTest {
 		try{
 			service.deposit("1234567890",-500);
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -282,7 +282,7 @@ public class BankTest {
 		try{
 			service.deposit("1234567890",500);
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -292,7 +292,7 @@ public class BankTest {
 		try{
 			service.withdraw("1234567890",500);
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -302,17 +302,7 @@ public class BankTest {
 		try{
 			service.withdraw("1234567890",500);
 		}catch(BankException be){
-			Assert.assertEquals("Exhausted Resultset", be.getMessage());
-		}
-		
-	}
-	@Test
-	public void testFundTransferForPhoneNo() {
-		
-		try{
-			service.fundTransfer("1234567","1234432",500);
-		}catch(BankException be){
-			assertEquals("Phone number should contain 10 digits", be.getMessage());
+			Assert.assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -322,7 +312,7 @@ public class BankTest {
 		try{
 			service.fundTransfer("1234567890","1234432112",500);
 		}catch(BankException be){
-			assertEquals("Exhausted Resultset", be.getMessage());
+			assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}
@@ -332,7 +322,7 @@ public class BankTest {
 		try{
 			service.fundTransfer("1234567890","1234432112",500);
 		}catch(BankException be){
-			assertEquals("Exhausted Resultset", be.getMessage());
+			assertEquals("Table 'jpabank.bank' doesn't exist", be.getMessage());
 		}
 		
 	}

@@ -9,10 +9,10 @@ import com.cg.exception.BankException;
 public class BankUtil {
 
 	public static Connection getConnection() throws BankException{
-		String url="jdbc:oracle:thin:@localhost:1521:xe";
+		String url="jdbc:mysql://localhost:3306/jpaBank";
 		try{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			return DriverManager.getConnection(url,"system","orcl11g");
+			Class.forName("com.mysql.jdbc.Driver");
+			return DriverManager.getConnection(url,"root","root");
 		}catch(ClassNotFoundException e){
 			throw new BankException(e.getMessage());
 		}catch(SQLException e1){

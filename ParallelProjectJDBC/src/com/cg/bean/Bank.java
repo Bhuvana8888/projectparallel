@@ -3,6 +3,8 @@ package com.cg.bean;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+@Entity
 public class Bank {
 
 	private String customerName;
